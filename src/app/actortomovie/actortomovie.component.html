@@ -1,0 +1,49 @@
+<div class = "alert alert-info" role = "alert">
+    <h6>Select Movie</h6>
+</div>
+
+<div class="section">
+    <table class="table table-striped">
+      <tr>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Select!</th>
+      </tr>
+      <tr *ngFor="let item of moviesDB">
+        <td>{{item.title}}</td>
+        <td>{{item.year}}</td>
+        <td><button type="submit" class="btn btn-primary" (click)="onSelectMovie(item)">Select</button></td>
+      </tr>
+    </table>
+</div>
+
+<div class = "alert alert-info" role = "alert">
+    <h6>Select Actor</h6>
+</div>
+
+<div class="section">
+    <table class="table table-striped">
+      <tr>
+        <th>Name</th>
+        <th>Birth Year</th>
+        <th>Select!</th>
+      </tr>
+      <tr *ngFor="let item of actorsDB">
+        <td>{{item.name}}</td>
+        <td>{{item.bYear}}</td>
+        <td><button type="submit" class="btn btn-primary" (click)="onSelectActor(item)">Select</button></td>
+      </tr>
+    </table>
+</div>
+
+<button type="submit" class="btn btn-primary" (click)="onAddActorToMovie()">Insert Actor To Movie</button>
+<br>
+
+<div class = "alert alert-info" role = "alert" *ngIf = "selectedMovie!=null">
+    <h6>Selected Movie : {{selectedMovie.title}}</h6>
+</div>
+
+<div class = "alert alert-info" role = "alert" *ngIf = "selectedActor!=null">
+    <h6>Selected Actor : {{selectedActor.name}}</h6>
+</div> 
+
